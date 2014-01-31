@@ -44,11 +44,18 @@ body.home
     padding-top:20px;
     text-align:right;
 }
+#scroller{
+    display: inline-block;
+    width: 100%;
+}
 #scroller video
 {
     width:49.9%;
     border:5px solid #888;
     float:left;
+}
+#scroller:after{
+    clear:both;
 }
 #scroller #localVideo
 {
