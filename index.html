@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+        if (window.location.protocol != "https:") {
+            window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="ico/favicon.png">
+    <title>JoinTheRoom</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
+	<section id="home" name="home"></section>
+	<div id="headerwrap">
+		<div class="container">
+			<br>
+			<h1>JoinTheRoom</h1>
+			<h2>Free video conferencing and screen sharing tool.</h2>
+			<div class="row">
+				<br>
+				<br>
+                <div class="col-md-6 col-md-offset-3">
+                    <form id="createRoom" onsubmit="appObject.createRoom(); return false;">
+                        <div class="input-group">
+                            <input id="sessionInput" class="form-control"/>
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-primary">Create Room!</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+				<br>
+				<div class="col-lg-6 col-lg-offset-3">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="w">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+				<h3>Welcome to <bold>JoinTheRoom </bold>. A free <bold>video conferencing and screen sharing</bold> tool. Crafted with love using HTML5, <bold>so no plugins are required</bold>. <br/>
+					Works in <a href="http://caniuse.com/#search=webrtc">browsers</a> supporting <bold>HTML5</bold> AND <bold>WebRTC</bold>.
+				</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section id="services" name="services"></section>
+	<div id="g">
+		<div class="container">
+			<div class="row">
+				<h3>FEATURES</h3>
+				<br>
+				<br>
+				<div class="col-lg-3">
+					<img src="images/s1.png">
+					<h4>Video</h4>
+					<p>Everybody in the room can see everybody. Do video conferencing on the fly.</p>
+				</div>
+				<div class="col-lg-3">
+					<img src="images/s2.png">
+					<h4>Share Desktop</h4>
+					<p>Share desktop to show your screen to other people in the room. This works when using https:// url.</p>
+				</div>
+				<div class="col-lg-3">
+					<img src="images/s3.png">
+					<h4>Easy</h4>
+					<p>No signup. No hassle. No tracking.</p>
+				</div>
+				<div class="col-lg-3">
+					<img src="images/s4.png">
+					<h4>Anonymous</h4>
+					<p>Once you get into the room all traffic directly goes from peer to peer.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section id="contact" name="contact"></section>
+	<div id="f">
+		<div class="container">
+			<div class="row">
+				<h3><b>CREATED BY</b></h3>
+				<br>
+				<div class="col-lg-4 col-lg-offset-4">
+					<h3><b>Yatendra Khandelwal</b></h3>
+					<p>
+						<a href="http://yatendra.com"><i class="icon-globe"></i></a>
+						<a href="http://twitter.com/yatendra"><i class="icon-twitter"></i></a>
+						<a href="https://github.com/yatendra"><i class="icon-github"></i></a>
+					</p>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="c">
+		<div class="container">
+			<p>Theme created by <a href="http://www.blacktie.co">BLACKTIE.CO</a></p>
+		
+		</div>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/smoothscroll.js"></script>
+	<script src="js/main.js"></script>
+    <script src="js/appObject.js?v=4"></script>
+</body>
+</html>

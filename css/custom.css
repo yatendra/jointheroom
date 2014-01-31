@@ -1,0 +1,126 @@
+﻿html
+{
+    height:100%;
+}
+body.home
+{
+    background-image:url(../images/header-bg1.jpg);
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100%;
+    height:100%;
+    color:#fff;
+}
+#homepage h1
+{
+    text-align:center;
+    color:#fff;
+}
+#homepage #createRoom
+{
+    padding:40px;
+}
+#subTitle
+{
+    margin-left:25px;
+}
+#console .row
+{
+    margin-left:0;
+    margin-right:0;
+}
+#console .header h1 a, #console .header h1 a:hover
+{
+    color:#2c3e50;
+    text-decoration:none
+}
+.header
+{
+    margin-bottom:20px;
+}
+.headerright
+{
+    padding-top:20px;
+    text-align:right;
+}
+#main
+{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    background-color:#eee;
+    text-align:center;
+}
+#scroller
+{
+    position:absolute;
+    bottom:0;
+    overflow:auto;
+    width:100%;
+}
+#scroller video,#main video
+{
+    height:100%;
+}
+#message
+{
+    position:absolute;
+    bottom:210px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+#main video
+{
+    margin:0 auto;
+    max-width:100%;
+    min-height:100%;
+}
+video
+{
+    border:5px solid #888;
+}
+#localVideo
+{
+    border:5px solid #18bc9c;
+}
+#localContainer, #remotes
+{
+    height:100%;
+}
+.menu h1.logo {
+font-family: 'Raleway', Helvetica, Arial, sans-serif;
+font-size: 16px;
+font-weight: 800;
+letter-spacing: 0.15em;
+line-height: 40px;
+text-transform: uppercase;
+color: #ffffff;
+margin-top: 20px;
+margin-left: 20px;
+display: block;
+}
+@media (max-height:400px)
+{
+    #main
+    {
+        bottom:100px;
+    }
+    #scroller
+    {
+        height:100px;
+    }
+}
+@media (min-height:400px)
+{
+    #main
+    {
+        bottom:200px;
+    }
+    #scroller
+    {
+        height:200px;
+    }
+}
