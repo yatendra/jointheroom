@@ -61,6 +61,9 @@ body.home
 {
     border:5px solid #18bc9c;
 }
+#menuToggle{
+    background: rgba(0,0,0,0.6);
+}
 .menu h1.logo {
 font-family: 'Raleway', Helvetica, Arial, sans-serif;
 font-size: 16px;
