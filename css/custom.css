@@ -44,51 +44,15 @@ body.home
     padding-top:20px;
     text-align:right;
 }
-#main
+#scroller video
 {
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    background-color:#eee;
-    text-align:center;
-}
-#scroller
-{
-    position:absolute;
-    bottom:0;
-    overflow:auto;
-    width:100%;
-}
-#scroller video,#main video
-{
-    height:100%;
-}
-#message
-{
-    position:absolute;
-    bottom:210px;
-    left: 0;
-    right: 0;
-    text-align: center;
-}
-#main video
-{
-    margin:0 auto;
-    max-width:100%;
-    min-height:100%;
-}
-video
-{
+    width:49.9%;
     border:5px solid #888;
+    float:left;
 }
-#localVideo
+#scroller #localVideo
 {
     border:5px solid #18bc9c;
-}
-#localContainer, #remotes
-{
-    height:100%;
 }
 .menu h1.logo {
 font-family: 'Raleway', Helvetica, Arial, sans-serif;
@@ -102,25 +66,8 @@ margin-top: 20px;
 margin-left: 20px;
 display: block;
 }
-@media (max-height:400px)
+@media (max-width: 767px) {
+#scroller video
 {
-    #main
-    {
-        bottom:100px;
-    }
-    #scroller
-    {
-        height:100px;
-    }
-}
-@media (min-height:400px)
-{
-    #main
-    {
-        bottom:200px;
-    }
-    #scroller
-    {
-        height:200px;
-    }
+    width:100%;
 }

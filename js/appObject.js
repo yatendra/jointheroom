@@ -20,13 +20,11 @@
             autoRequestMedia: true,
             log: true
         });
-
         // when it's ready, join if we got a room from the URL
         appObject.webrtc.on('readyToCall', function () {
             // you can name it anything
             if (room) appObject.webrtc.joinRoom(room);
         });
-
         if (room) {
             appObject.setRoom(room);
         }
@@ -55,25 +53,30 @@
         document.body.onclick = function (e) {
             if (e.target.tagName.toUpperCase() === "VIDEO") {
                 var video = e.target;
-                var inVideo = $("#" + video.id);
-                var outVideo = $("#main video");
-                var inVideoPaused = inVideo.get(0)? inVideo.get(0).paused : true;
-                var outVideoPaused = outVideo.get(0)? outVideo.get(0).paused : true;
-                if (inVideo.attr("id") != outVideo.attr("id")) {
-                    $("#scroller").append(outVideo);
-                    $("#main").append(inVideo);
-                    if (!inVideoPaused) {
-                        inVideo.get(0).play();
-                    }
-                    if (!outVideoPaused) {
-                        outVideo.get(0).play();
-                    }
-                }
+                video.requestFullScreen = video.webkitRequestFullScreen || image.mozRequestFullScreen || image.requestFullScreen;
+                video.requestFullScreen();
+                //var inVideo = $("#" + video.id);
+                //var outVideo = $("#main video");
+                //var inVideoPaused = inVideo.get(0)? inVideo.get(0).paused : true;
+                //var outVideoPaused = outVideo.get(0)? outVideo.get(0).paused : true;
+                //if (inVideo.attr("id") != outVideo.attr("id")) {
+                //    $("#scroller").append(outVideo);
+                //    $("#main").append(inVideo);
+                //    if (!inVideoPaused) {
+                //        inVideo.get(0).play();
+                //    }
+                //    if (!outVideoPaused) {
+                //        outVideo.get(0).play();
+                //    }
+                //}
             }
         };
     },
     setRoom: function (name) {
         $('#room').text("Room: " + name);
         $('#link').html('Link to join: <a href="mailto:?subject=Join%20me%20for%20video%20conference&body=' + encodeURIComponent(location.href) + '">' + location.href + '</a>');
+    },
+    isFullScreen:function(){
+        return !!(document.webkitIsFullScreen || document.mozFullScreen || document.isFullScreen);
     }
 }

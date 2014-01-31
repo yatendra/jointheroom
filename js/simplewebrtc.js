@@ -161,7 +161,7 @@
                 // store video element as part of peer for easy removal
                 peer.videoEl = video;
                 video.id = this.getDomId(peer);
-                if (container) container.appendChild(video);
+                if (container) container.insertBefore(video,container.firstChild);
                 this.emit('videoAdded', video, peer);
             };
 
