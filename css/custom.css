@@ -12,37 +12,8 @@ body.home
     height:100%;
     color:#fff;
 }
-#homepage h1
-{
-    text-align:center;
-    color:#fff;
-}
-#homepage #createRoom
-{
-    padding:40px;
-}
-#subTitle
-{
-    margin-left:25px;
-}
-#console .row
-{
-    margin-left:0;
-    margin-right:0;
-}
-#console .header h1 a, #console .header h1 a:hover
-{
-    color:#2c3e50;
-    text-decoration:none
-}
-.header
-{
-    margin-bottom:20px;
-}
-.headerright
-{
-    padding-top:20px;
-    text-align:right;
+#headerwrap h1 {
+    color:#eee;
 }
 #scroller{
     display: inline-block;
