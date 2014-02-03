@@ -73,8 +73,7 @@
         };
     },
     setRoom: function (name) {
-        $('#room').text("Room: " + name);
-        $('#link').html('Link to join: <a href="mailto:?subject=Join%20me%20for%20video%20conference&body=' + encodeURIComponent(location.href) + '">' + location.href + '</a>');
+        $("title").text($("title").text()+" - "+name);
     },
     isFullScreen:function(){
         return !!(document.webkitIsFullScreen || document.mozFullScreen || document.isFullScreen);
