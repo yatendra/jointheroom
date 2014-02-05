@@ -30,7 +30,7 @@
         }
         var button = $('#shareScreenButton'),
                 setButton = function (bool) {
-                    button.text(bool ? 'Share Screen' : 'Stop Sharing');
+                    button.attr("title", bool ? 'Share Screen' : 'Stop Sharing');
                 };
 
         setButton(true);
@@ -40,8 +40,10 @@
                 appObject.webrtc.stopScreenShare();
                 setButton(true);
             } else {
+                alert("0");
                 appObject.webrtc.shareScreen(function (err) {
-                    if (err) {
+                alert(err);
+                if (err) {
                         setButton(true);
                     } else {
                         setButton(false);
@@ -55,20 +57,6 @@
                 var video = e.target;
                 video.requestFullScreen = video.webkitRequestFullScreen || image.mozRequestFullScreen || image.requestFullScreen;
                 video.requestFullScreen();
-                //var inVideo = $("#" + video.id);
-                //var outVideo = $("#main video");
-                //var inVideoPaused = inVideo.get(0)? inVideo.get(0).paused : true;
-                //var outVideoPaused = outVideo.get(0)? outVideo.get(0).paused : true;
-                //if (inVideo.attr("id") != outVideo.attr("id")) {
-                //    $("#scroller").append(outVideo);
-                //    $("#main").append(inVideo);
-                //    if (!inVideoPaused) {
-                //        inVideo.get(0).play();
-                //    }
-                //    if (!outVideoPaused) {
-                //        outVideo.get(0).play();
-                //    }
-                //}
             }
         };
     },

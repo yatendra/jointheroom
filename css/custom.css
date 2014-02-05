@@ -22,20 +22,31 @@
 {
     border:5px solid #18bc9c;
 }
-#menuToggle{
-    background: rgba(0,0,0,0.6);
-}
-.menu h1.logo {
-font-family: 'Raleway', Helvetica, Arial, sans-serif;
-font-size: 16px;
-font-weight: 800;
-letter-spacing: 0.15em;
-line-height: 40px;
-text-transform: uppercase;
-color: #ffffff;
-margin-top: 20px;
-margin-left: 20px;
+.menuItem {
+    margin: 10px;
+z-index: 11;
 display: block;
+text-align: center;
+font-size: 14px;
+color: #ffffff;
+width: 40px;
+height: 40px;
+line-height: 40px;
+cursor: pointer;
+background: rgba(0,0,0,0.6);
+-webkit-transition: all .1s ease-in-out;
+-moz-transition: all .1s ease-in-out;
+-ms-transition: all .1s ease-in-out;
+-o-transition: all .1s ease-in-out;
+transition: all .1s ease-in-out;
+}
+.menu a{
+    margin-left: 0;
+    color: #fff;
+}
+.menu a>i{
+    float:none;
+    display: inline;
 }
 @media (max-width: 767px) {
 #scroller video
