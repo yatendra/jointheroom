@@ -30,7 +30,7 @@
         }
         var button = $('#shareScreenButton'),
                 setButton = function (bool) {
-                    button.attr("title", bool ? 'Share Screen' : 'Stop Sharing');
+                    button.attr("data-original-title", bool ? 'Share Screen' : 'Stop Sharing');
                 };
 
         setButton(true);
@@ -40,9 +40,7 @@
                 appObject.webrtc.stopScreenShare();
                 setButton(true);
             } else {
-                alert("0");
                 appObject.webrtc.shareScreen(function (err) {
-                alert(err);
                 if (err) {
                         setButton(true);
                     } else {
