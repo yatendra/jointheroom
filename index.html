@@ -3,7 +3,7 @@
   <head>
     <script>
         if (window.location.protocol != "https:") {
-            //window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+            window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
         }
     </script>
     <meta charset="utf-8">
@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
     <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/custom.css?v=12">
+    <link rel="stylesheet" href="css/custom.css?v=13">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -50,27 +50,8 @@
 			</div>
 		</div>
 	</div>
-	<div id="w">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-				<h3>
-					Works in <a href="http://caniuse.com/#search=webrtc">browsers</a> supporting <bold>HTML5</bold> AND <bold>WebRTC</bold>.
-				</h3>
-				<h3>Video conferencing</h3>
-				Chrome (Desktop v23+, Android v28+)<br/>
-				Firefox (Desktop v22+, Android v24+)<br/>
-				Opera (Desktop v18+, Opera mobile v12+)<br/>
-				Chrome OS<br/>
-				<h3>Screen Sharing</h3>
-				Source (Chrome desktop v26+, go to Chrome://flags, click enable next to "Enable screen capture support in getUserMedia()" and restart your browser)<br/>
-				Viewers (A browser suporting video conferencing specified above)<br/><br/>
-				</div>
-			</div>
-		</div>
-	</div>
 	<section id="services" name="services"></section>
-	<div id="g">
+	<div id="w">
 		<div class="container">
 			<div class="row">
 				<h3>FEATURES</h3>
@@ -95,6 +76,25 @@
 					<img src="images/s4.png">
 					<h4>Peer to peer</h4>
 					<p>Once you get into the room all traffic directly goes from peer to peer on a secure channel.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="g">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+				<h3>
+					Works in <a href="http://caniuse.com/#search=webrtc">browsers</a> supporting <bold>HTML5</bold> AND <bold>WebRTC</bold>.
+				</h3>
+				<h3>Video conferencing</h3>
+				Chrome (Desktop v23+, Android v28+)<br/>
+				Firefox (Desktop v22+, Android v24+)<br/>
+				Opera (Desktop v18+, Opera mobile v12+)<br/>
+				Chrome OS<br/>
+				<h3>Screen Sharing</h3>
+				Source (Chrome desktop v26+, go to Chrome://flags, click enable next to "Enable screen capture support in getUserMedia()" and restart your browser)<br/>
+				Viewers (A browser suporting video conferencing specified above)<br/><br/>
 				</div>
 			</div>
 		</div>
@@ -128,7 +128,7 @@
     <script src="js/classie.js"></script>
     <script src="js/smoothscroll.js"></script>
 	<script src="js/main.js"></script>
-    <script src="js/appObject.js?v=12"></script>
+    <script src="js/appObject.js?v=13"></script>
     <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

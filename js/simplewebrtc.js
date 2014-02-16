@@ -15,7 +15,7 @@
                 var self = this;
                 var options = opts || {};
                 var config = this.config = {
-                    url: 'http://signaling.simplewebrtc.com:8888',
+                    url: 'https://signaling.simplewebrtc.com:8888',
                     debug: false,
                     localVideoEl: '',
                     remoteVideosEl: '',
@@ -61,10 +61,7 @@
                 connection.on('connect', function () {
                     self.emit('connectionReady', connection.socket.sessionid);
                     self.sessionReady = true;
-                    //self.testReadiness();
-                    setTimeout(function () {
-                        self.emit('readyToCall', self.connection.socket.sessionid);
-                    }, 1000);
+                    self.testReadiness();
                 });
 
                 connection.on('message', function (message) {
@@ -4881,7 +4878,7 @@
                         this.broadcaster = options.broadcaster;
                     }
                 } else {
-                    //this.pc.addStream(this.parent.localStream);
+                    this.pc.addStream(this.parent.localStream);
                 }
 
                 if (this.parent.config.enableDataChannels && webrtc.dataChannel) {
