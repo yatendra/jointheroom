@@ -61,7 +61,10 @@
                 connection.on('connect', function () {
                     self.emit('connectionReady', connection.socket.sessionid);
                     self.sessionReady = true;
-                    self.testReadiness();
+                    //self.testReadiness();
+                    setTimeout(function () {
+                        self.emit('readyToCall', self.connection.socket.sessionid);
+                    }, 1000);
                 });
 
                 connection.on('message', function (message) {
