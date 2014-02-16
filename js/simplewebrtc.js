@@ -5068,6 +5068,7 @@
 
             // Add a stream to the peer connection object
             PeerConnection.prototype.addStream = function (stream) {
+                alert(stream);
                 this.localStream = stream;
                 this.pc.addStream(stream);
             };
