@@ -134,7 +134,7 @@
                     this.webrtc.on('stoppedSpeaking', this.setVolumeForAll.bind(this, 1));
                 }
 
-                //if (this.config.autoRequestMedia) this.startLocalVideo();
+                if (this.config.autoRequestMedia) this.startLocalVideo();
             }
 
 
@@ -4881,7 +4881,7 @@
                         this.broadcaster = options.broadcaster;
                     }
                 } else {
-                    this.pc.addStream(this.parent.localStream);
+                    //this.pc.addStream(this.parent.localStream);
                 }
 
                 if (this.parent.config.enableDataChannels && webrtc.dataChannel) {
@@ -5068,11 +5068,8 @@
 
             // Add a stream to the peer connection object
             PeerConnection.prototype.addStream = function (stream) {
-                if(stream){
-                    alert(stream);
-                    this.localStream = stream;
-                    this.pc.addStream(stream);
-                }
+                this.localStream = stream;
+                this.pc.addStream(stream);
             };
 
 
