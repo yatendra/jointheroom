@@ -1,6 +1,5 @@
 ﻿var appObject = {
     webrtc: null,
-    localVideoStarted
     createRoom: function () {
         var val = $('#sessionInput').val().toLowerCase().replace(/\s/g, '-').replace(/[^A-Za-z0-9_\-]/g, '');
         var loc = "console.html?" + val;
