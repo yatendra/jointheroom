@@ -235,6 +235,7 @@
             };
 
             SimpleWebRTC.prototype.stopLocalVideo = function () {
+                alert("in stopLocalVideo");
                 this.webrtc.stopLocalMedia();
             };
 
