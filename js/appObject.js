@@ -11,7 +11,7 @@
 
         // create our webrtc connection
         appObject.webrtc = new SimpleWebRTC({
-            url: "http://signalmaster.herokuapp.com",
+            url: "https://signalmaster.herokuapp.com",
             // the id/element dom element that will hold "our" video
             localVideoEl: 'localVideo',
             // the id/element dom element that will hold remote videos
