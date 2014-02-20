@@ -57,10 +57,13 @@
             }
         });
         videoButton.click(function () {
+            alert($("#localVideo").attr("src"));
             if ($("#localVideo").attr("src")!="") {
+                alert("starting");
                 appObject.webrtc.startLocalVideo();
                 setVideoButton(false);
             } else {
+                alert("stopping");
                 appObject.webrtc.stopLocalVideo();
                 setVideoButton(true);
             }
