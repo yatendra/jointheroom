@@ -131,6 +131,7 @@
                     this.webrtc.on('stoppedSpeaking', this.setVolumeForAll.bind(this, 1));
                 }
 
+                alert(this.config.autoRequestMedia);
                 if (this.config.autoRequestMedia) this.startLocalVideo();
             }
 
