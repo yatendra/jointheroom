@@ -23,6 +23,7 @@
         // when it's ready, join if we got a room from the URL
         appObject.webrtc.on('readyToCall', function () {
             // you can name it anything
+            alert("readyToCall");
             if (room) appObject.webrtc.joinRoom(room);
         });
         if (room) {
