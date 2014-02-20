@@ -59,10 +59,10 @@
         videoButton.click(function () {
             if ($("#localVideo").attr("src")!="") {
                 appObject.webrtc.startLocalVideo();
-                setVideoButton(true);
+                setVideoButton(false);
             } else {
                 appObject.webrtc.stopLocalVideo();
-                setVideoButton(false);
+                setVideoButton(true);
             }
         });
         document.body.onclick = function (e) {
