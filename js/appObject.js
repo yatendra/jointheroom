@@ -65,7 +65,7 @@
             } else {
                 alert("stopping");
                 appObject.webrtc.stopLocalVideo();
-                ($("#localVideo").removeAttr("src");
+                $("#localVideo").removeAttr("src");
                 setVideoButton(true);
             }
         });
