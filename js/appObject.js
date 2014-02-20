@@ -17,7 +17,7 @@
             // the id/element dom element that will hold remote videos
             remoteVideosEl: 'scroller',
             // immediately ask for camera access
-            autoRequestMedia: false,
+            autoRequestMedia: true,
             log: true
         });
         // when it's ready, join if we got a room from the URL
