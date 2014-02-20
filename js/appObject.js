@@ -1,5 +1,6 @@
 ﻿var appObject = {
     webrtc: null,
+    localVideoStarted
     createRoom: function () {
         var val = $('#sessionInput').val().toLowerCase().replace(/\s/g, '-').replace(/[^A-Za-z0-9_\-]/g, '');
         var loc = "console.html?" + val;
@@ -23,7 +24,6 @@
         // when it's ready, join if we got a room from the URL
         appObject.webrtc.on('readyToCall', function () {
             // you can name it anything
-            alert("readyToCall");
             if (room) appObject.webrtc.joinRoom(room);
         });
         if (room) {
@@ -35,6 +35,12 @@
                 };
 
         setButton(true);
+        var videoButton = $('#videoButton'),
+                setVideoButton = function (bool) {
+                    videoButton.attr("data-original-title", bool ? 'Enable video' : 'Disable video');
+                };
+
+        setVideoButton(true);
 
         button.click(function () {
             if (appObject.webrtc.getLocalScreen()) {
@@ -49,6 +55,15 @@
                     }
                 });
 
+            }
+        });
+        videoButton.click(function () {
+            if ($("#localVideo").attr("src")!="") {
+                appObject.webrtc.startLocalVideo();
+                setVideoButton(true);
+            } else {
+                appObject.webrtc.stopLocalVideo();
+                setVideoButton(false);
             }
         });
         document.body.onclick = function (e) {

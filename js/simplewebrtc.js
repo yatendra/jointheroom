@@ -131,7 +131,6 @@
                     this.webrtc.on('stoppedSpeaking', this.setVolumeForAll.bind(this, 1));
                 }
 
-                alert(this.config.autoRequestMedia);
                 if (this.config.autoRequestMedia) this.startLocalVideo();
             }
 
@@ -5068,7 +5067,6 @@
             // Add a stream to the peer connection object
             PeerConnection.prototype.addStream = function (stream) {
                 this.localStream = stream;
-                alert("stream:"+stream);
                 if(stream){
                     this.pc.addStream(stream);
                 }
