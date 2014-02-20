@@ -4738,9 +4738,13 @@
             };
 
             WebRTC.prototype.stopLocalMedia = function () {
+                alert("0");
                 if (this.localStream) {
+                    alert("1");
                     this.localStream.stop();
+                    alert("2");
                     this.emit('localStreamStopped');
+                    alert("3");
                 }
             };
 
