@@ -58,7 +58,7 @@
         });
         videoButton.click(function () {
             alert($("#localVideo").attr("src"));
-            if ($("#localVideo").attr("src")!="") {
+            if ($("#localVideo").attr("src")) {
                 alert("starting");
                 appObject.webrtc.startLocalVideo();
                 setVideoButton(false);
