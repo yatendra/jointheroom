@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/custom.css?v=15">
+    <link rel="stylesheet" href="css/custom.css?v=17">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -25,25 +25,60 @@
     <![endif]-->
 </head>
 <body>
-    <nav class="menu" id="theMenu">
-        <div class="menuItem"><a href="/" class="smoothScroll menuLink" data-toggle="tooltip" data-placement="left" title="Home"><i class="icon-home"></i></a></div>
-        <div class="menuItem"><a href="#" id="shareScreenButton" class="smoothScroll menuLink" data-toggle="tooltip" data-placement="left" title="Share screen"><i class="icon-laptop"></i></a></div>
-        <!--div class="menuItem"><a href="#" id="videoButton" class="smoothScroll menuLink" data-toggle="tooltip" data-placement="left" title="Enable video"><i class="icon-facetime-video"></i></a></div-->
-    </nav>
-    <div id="console">
-        <div id="scroller">
-            <video id="localVideo"></video>
+    <div id="screen1">
+        <div class="container">
+            <div class="row"> 
+                <div class="col-sm-4">
+                    <form role="form">
+                        <h2>Your details</h2>
+                        <input type="text" id="username" class="form-control" placeholder="Name (required)" required autofocus>
+                        <input type="text" id="accesscode" class="form-control" placeholder="Access code (optional )" autocomplete="off">
+                        <button class="btn btn-primary btn-block" type="submit" onclick="appObject.enterRoom();return false;">Enter Room</button>
+                        <div class="errorMessage"></div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="message">Click on a video to make it fullscreen and share url of this page with whoever you want to video chat and share screen with.</div>
-        <div class="message">Screensharing only works in Chrome right now. To make it work go to Chrome://flags, click enable next to "Enable screen capture support in getUserMedia()" and restart your browser.</div>
     </div>
+    <div id="screen2" class="hidden">
+        <nav class="menu" id="theMenu">
+            <div class="menuItem"><a href="/" class="smoothScroll menuLink" data-toggle="tooltip" data-placement="left" title="Home"><i class="icon-home"></i></a></div>
+            <div class="menuItem"><a id="shareScreenButton" class="smoothScroll menuLink" data-toggle="tooltip" data-placement="left" title="Share screen"><i class="icon-laptop"></i></a></div>
+            <div class="menuItem"><a id="changePasswordButton" class="smoothScroll menuLink" data-toggle="tooltip" data-placement="left" title="Change access code" onclick="appObject.showChangePassword();"><i class="icon-lock"></i></a></div>
+            <!--div class="menuItem"><a href="#" id="videoButton" class="smoothScroll menuLink" data-toggle="tooltip" data-placement="left" title="Enable video"><i class="icon-facetime-video"></i></a></div-->
+        </nav>
+        <div id="console">
+            <div id="scroller">
+                <video id="localVideo"></video>
+            </div>
+            <div class="message">Click on a video to make it fullscreen and share url of this page with whoever you want to video chat and share screen with.</div>
+            <div class="message">Screensharing only works in Chrome right now. To make it work go to Chrome://flags, click enable next to "Enable screen capture support in getUserMedia()" and restart your browser.</div>
+        </div>
+    </div>
+    <div id="changePasswordModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Change access code</h4>
+          </div>
+          <div class="modal-body">
+            <p><input type="text" id="accesscode2" class="form-control" placeholder="Access code (optional )" autocomplete="off"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="appObject.changePassword();">Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="js/simplewebrtc.js?v=15"></script>
+    <script src="js/simplewebrtc.js?v=17"></script>
     <script src="js/classie.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/appObject.js?v=15"></script>
+    <script src="js/appObject.js?v=17"></script>
     <script>
     	$( document ).ready(function() {
 			appObject.initConsole();

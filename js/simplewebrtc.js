@@ -185,10 +185,10 @@ SimpleWebRTC.prototype.setVolumeForAll = function (volume) {
     });
 };
 
-SimpleWebRTC.prototype.joinRoom = function (name, cb) {
+SimpleWebRTC.prototype.joinRoom = function (name, password, cb) {
     var self = this;
     this.roomName = name;
-    this.connection.emit('join', name, function (err, roomDescription) {
+    this.connection.emit('join', name, password, function (err, roomDescription) {
         if (err) {
             self.emit('error', err);
         } else {
@@ -209,10 +209,16 @@ SimpleWebRTC.prototype.joinRoom = function (name, cb) {
                 }
             }
         }
-
         if (cb) cb(err, roomDescription);
         self.emit('joinedRoom', name);
     });
+};
+
+SimpleWebRTC.prototype.changePassword = function (password) {
+    if (this.roomName) {
+        this.connection.emit('changePassword', password);
+        this.emit('changedPassword', password);
+    }
 };
 
 SimpleWebRTC.prototype.getEl = function (idOrEl) {

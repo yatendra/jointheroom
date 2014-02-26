@@ -2,6 +2,9 @@
 {
     height:100%;
 }
+body{
+	background-color: #fff;
+}
 #headerwrap h1 {
     color:#eee;
 }
@@ -47,6 +50,9 @@ transition: all .1s ease-in-out;
 .menu a>i{
     float:none;
     display: inline;
+}
+form button,form input{
+	margin-bottom: 10px;
 }
 @media (max-width: 767px) {
 #scroller video

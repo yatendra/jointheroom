@@ -1,33 +1,70 @@
 ﻿var appObject = {
     webrtc: null,
+    username:'',
+    accessCode:'',
+    roomJoined:false,
+    roomName:"",
+    isReadyToCall:false,
     createRoom: function () {
         var val = $('#sessionInput').val().toLowerCase().replace(/\s/g, '-').replace(/[^A-Za-z0-9_\-]/g, '');
         var loc = "console.html?" + val;
         window.location.replace(loc);
     },
-    initConsole: function () {
+    showChangePassword: function(){
+        $("#changePasswordModal").modal("show");
+    },
+    changePassword: function(){
+        var password=$("#accesscode2").val();
+        if(password && password!="") {
+            appObject.webrtc.changePassword(password);
+            $("#changePasswordModal").modal("hide");
+        }
+    },
+    joinRoom: function(){
+        appObject.username=$("#username").val();
+        appObject.accessCode=$("#accesscode").val();
+        if (appObject.roomName) {
+            appObject.webrtc.joinRoom(appObject.roomName,appObject.accessCode,function(err,roomDescription){
+                if (err) {
+                    $(".errorMessage").text(err);
+                }
+                else{
+                    $("#screen1").addClass("hidden");
+                    $("#screen2").removeClass("hidden");
+                    $("#accesscode2").val(appObject.accessCode);
+                }                    
+            });
+        }
+    },
+    enterRoom: function(){
         // grab the room from the URL
-        var room = location.search && location.search.split('?')[1];
-
-        // create our webrtc connection
-        appObject.webrtc = new SimpleWebRTC({
-            url: "https://signalmaster.herokuapp.com",
-            // the id/element dom element that will hold "our" video
-            localVideoEl: 'localVideo',
-            // the id/element dom element that will hold remote videos
-            remoteVideosEl: 'scroller',
-            // immediately ask for camera access
-            autoRequestMedia: true,
-            log: true
-        });
+        appObject.roomName = location.search && location.search.split('?')[1];
+        // create our webrtc connection if not already readytocall
+        if(!appObject.isReadyToCall){
+            appObject.webrtc = new SimpleWebRTC({
+                url: "https://signalmaster.herokuapp.com",
+                // the id/element dom element that will hold "our" video
+                localVideoEl: 'localVideo',
+                // the id/element dom element that will hold remote videos
+                remoteVideosEl: 'scroller',
+                // immediately ask for camera access
+                autoRequestMedia: true,
+                log: true
+            });
+        }
+        //if already readytocall join the room
+        if(appObject.isReadyToCall) appObject.joinRoom();
         // when it's ready, join if we got a room from the URL
         appObject.webrtc.on('readyToCall', function () {
-            // you can name it anything
-            if (room) appObject.webrtc.joinRoom(room);
+            appObject.isReadyToCall=true;
+            appObject.joinRoom();
         });
-        if (room) {
-            appObject.setRoom(room);
+        if (appObject.roomName) {
+            $("title").text($("title").text()+" - "+appObject.roomName);
         }
+        return false;
+    },
+    initConsole: function () {
         var button = $('#shareScreenButton'),
                 setButton = function (bool) {
                     button.attr("data-original-title", bool ? 'Share Screen' : 'Stop Sharing');
@@ -53,7 +90,6 @@
                         setButton(false);
                     }
                 });
-
             }
         });
         videoButton.click(function () {
@@ -73,9 +109,6 @@
                 video.requestFullScreen();
             }
         };
-    },
-    setRoom: function (name) {
-        $("title").text($("title").text()+" - "+name);
     },
     isFullScreen:function(){
         return !!(document.webkitIsFullScreen || document.mozFullScreen || document.isFullScreen);
