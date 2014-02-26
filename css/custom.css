@@ -15,7 +15,7 @@ body{
 #scroller video
 {
     width:49.9%;
-    border:5px solid #888;
+    border:1px solid #888;
     float:left;
 }
 #scroller:after{
@@ -23,7 +23,7 @@ body{
 }
 #scroller #localVideo
 {
-    border:5px solid #18bc9c;
+    border:1px solid #18bc9c;
 }
 .menuItem {
     margin: 10px;
