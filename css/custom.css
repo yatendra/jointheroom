@@ -26,7 +26,7 @@ body{
     border:1px solid #18bc9c;
 }
 .menuItem {
-    margin: 10px;
+margin: 10px;
 z-index: 11;
 display: block;
 text-align: center;
@@ -53,6 +53,9 @@ transition: all .1s ease-in-out;
 }
 form button,form input{
 	margin-bottom: 10px;
+}
+.message{
+    padding: 10px;
 }
 @media (max-width: 767px) {
 #scroller video
